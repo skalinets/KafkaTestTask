@@ -36,4 +36,15 @@ services:
     depends_on:
       - kafka
     entrypoint: ["/bin/bash", "-x", "ksql-datagen", "topic=users", "maxInterval=3000", "value-format=json", "bootstrap-server=kafka:9092", "quickstart=users"] 
- 
+
+  notifications-reader:
+    image: confluentinc/cp-kafkacat
+    depends_on:
+      - kafka
+    entrypoint: ["kafkacat", "-b", "kafka:9092", "-q", "-C", "-t", "notifications"]
+
+  users-reader:
+    image: confluentinc/cp-kafkacat
+    depends_on:
+      - kafka
+    entrypoint: ["kafkacat", "-b", "kafka:9092", "-q", "-C", "-t", "users"]
