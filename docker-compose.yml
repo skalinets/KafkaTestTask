@@ -48,3 +48,8 @@ services:
     depends_on:
       - kafka
     entrypoint: ["kafkacat", "-b", "kafka:9092", "-q", "-C", "-t", "users"]
+
+  welcome-service:
+    image: welcome-service
+    build:
+      context: ./WelcomeService
