@@ -39,3 +39,7 @@ docker-compose logs notifications-reader # for users
 
 You can use `docker-compose logs --follow <svc_name>` to follow (don't exit on the end) logs. 
 
+### Connect to Kafka from dev machine
+
+To connect to the kafka use `localhost:29092` for MacOS or `host.docker.internal:9093` for Windows
+as bootstrap servers. 
