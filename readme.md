@@ -1,4 +1,4 @@
-# Kafka homework
+# Kafka Homework
 
 This repository contains a project template and infrastructure for the Kafka homework. 
 
@@ -26,4 +26,16 @@ is required to complete this task.
 
 ### Start the Stack
 
+```bash
 docker-compose up -d
+```
+
+### View messages in the Kafka
+
+```bash
+docker-compose logs users-reader # for users
+docker-compose logs notifications-reader # for users
+```
+
+You can use `docker-compose logs --follow <svc_name>` to follow (don't exit on the end) logs. 
+
